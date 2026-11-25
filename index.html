@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#527a61"><meta name="description" content="Kunlik dazmollash ishlarini va daromadni hisoblash">
+<link rel="manifest" href="manifest.json"><link rel="stylesheet" href="style.css">
+<title>Onamning ish hisobi</title>
+</head>
+<body>
+<div class="app-shell">
+<header class="top"><div><p class="eyebrow">ISH VA DAROMAD</p><h1>Onamning ish hisobi</h1></div><button id="loginBtn" class="btn outline">Google orqali kirish</button></header>
+<div id="userStrip" class="user-strip hidden"><span id="userName"></span><span id="syncStatus">Mahalliy saqlash</span><button id="logoutBtn" class="text-btn">Chiqish</button></div>
+<main>
+<section class="hero-card"><div><p class="eyebrow">BU OY JAMI DAROMAD</p><h2 id="monthEarnings">0 so'm</h2><p id="monthLabel"></p></div><div class="hero-icon">✦</div></section>
+<section class="stats-grid"><article class="stat"><span>Jami mahsulot</span><strong id="monthItems">0</strong></article><article class="stat"><span>Ishlagan kunlar</span><strong id="workedDays">0</strong></article><article class="stat"><span>Kunlik o'rtacha</span><strong id="avgItems">0</strong></article><article class="stat"><span>Eng yaxshi kun</span><strong id="bestDay">—</strong></article></section>
+<section class="card entry"><div class="section-head"><div><p class="eyebrow">KUNLIK QAYD</p><h2 id="entryTitle">Bugungi ish</h2></div><span id="todayBadge" class="pill">Bugun</span></div><label for="workDate">Sana</label><input type="date" id="workDate"><label for="itemCount">Dazmollangan mahsulot soni</label><input type="number" id="itemCount" min="0" step="1" inputmode="numeric" placeholder="Masalan: 150"><label for="note">Izoh (ixtiyoriy)</label><input id="note" maxlength="120" placeholder="Masalan: ko'ylak, choyshab..."><div class="entry-bottom"><div><small>Bugungi daromad</small><strong id="todayEarn">0 so'm</strong></div><button id="saveEntry" class="btn primary">Saqlash</button></div><p class="hint" id="entryHint"></p></section>
+<section class="card"><div class="section-head"><div><p class="eyebrow">TAXMIN</p><h2>Oy oxirida</h2></div><span class="pill">Prognoz</span></div><div class="forecast"><div><small>Taxminiy mahsulot</small><strong id="forecastItems">0</strong></div><div><small>Taxminiy daromad</small><strong id="forecastMoney">0 so'm</strong></div></div><p class="hint">Hisob ishlagan kunlardagi o'rtacha mahsulot soniga asoslangan taxmin. Kafolatlangan daromad emas.</p></section>
+<section class="card calendar-card"><div class="section-head"><div><p class="eyebrow">ISH KUNLARI</p><h2>Kalendar</h2></div><div class="month-nav"><button id="prevMonth" aria-label="Oldingi oy">‹</button><span id="calendarMonth"></span><button id="nextMonth" aria-label="Keyingi oy">›</button></div></div><div class="weekdays"><span>Du</span><span>Se</span><span>Ch</span><span>Pa</span><span>Ju</span><span>Sh</span><span>Ya</span></div><div id="calendarGrid" class="calendar-grid"></div><div id="selectedDay" class="selected-day">Kalendar kunini tanlang.</div></section>
+<section class="card"><div class="section-head"><div><p class="eyebrow">SOZLAMALAR</p><h2>Bir dona narxi</h2></div></div><label for="rate">Har bir mahsulot uchun (so'm)</label><input type="number" id="rate" min="0" inputmode="numeric"><button id="saveRate" class="btn outline full">Narxni saqlash</button><p class="hint">Narx o'zgarsa, ochiq oy hisoblari yangi narx bilan hisoblanadi. Yopilgan oylar o'zgarishsiz qoladi.</p></section>
+<section class="card"><div class="section-head"><div><p class="eyebrow">SAQLASH VA TARIX</p><h2>Hisobotlar</h2></div></div><div class="button-stack"><button id="closeMonth" class="btn primary">Oyni yopish va arxivlash</button><button id="exportCsv" class="btn outline">Joriy oy CSV yuklab olish</button><button id="backup" class="btn outline">Backup (JSON) yuklab olish</button><label class="btn outline file-label" for="restoreFile">Backup tiklash (JSON)</label><input id="restoreFile" type="file" accept="application/json" class="hidden"><button id="showArchive" class="btn outline">Arxivlarni ko'rish</button></div><div id="archiveList" class="archive-list hidden"></div></section>
+</main><footer>Ma'lumotlar qurilmada saqlanadi va Google hisobga ulanganda sinxronlanadi.</footer>
+</div><div id="toast" role="status"></div>
+<script type="module" src="script.js"></script><script src="register.js"></script>
+</body></html>
